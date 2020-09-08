@@ -11,7 +11,7 @@ exports.sendMail = async (req, res) => {
       return res.json({ success: 0, msg: 'Vnesite pravilen e-mail' });
     }
     console.log(text);
-    if (text.length() > 1000) {
+    if (text.length > 1000) {
       return res.json({ success: 0, msg: 'Besedilo je predolgo.' });
     }
     if (subject.length() > 35) {
