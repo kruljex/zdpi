@@ -8,8 +8,18 @@ app.use(express.json());
 
 let corsOptions = {
   origin: '*',
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
 };
+
+//Static
+app.use(express.static('client/build'));
+
+const path = require('path');
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
+
+//CORS
 app.use('/api/mail', cors(), mailRouter);
 app.use('/api/konfiguracija', cors(), confRouter);
 

@@ -1,0 +1,632 @@
+@import '../variables.scss';
+
+.konfigurator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15rem;
+  min-height: 100vh;
+  background: $linear-blue;
+  background-size: cover;
+  position: relative;
+
+  @media only screen and (max-width: 1250px) {
+    flex-direction: column;
+  }
+
+  @media only screen and (max-width: 900px) {
+    padding-top: 10rem;
+  }
+
+  &__title {
+    width: 40%;
+    margin-bottom: 10rem;
+    margin-right: 3rem;
+    color: white;
+
+    @media only screen and (max-width: 1250px) {
+      width: 100%;
+      align-self: center;
+      margin-bottom: 7rem;
+      margin-right: 0;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+
+      span {
+        font-size: 7rem;
+        text-transform: uppercase;
+        line-height: 1.1;
+        display: block;
+      }
+
+      @media only screen and (max-width: 1250px) {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 0 2rem;
+
+        span {
+          display: inline;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        margin-top: 1rem;
+        span {
+          font-size: 5rem;
+        }
+      }
+      @media only screen and (max-width: 500px) {
+        span {
+          font-size: 4rem;
+        }
+      }
+      @media only screen and (max-width: 400px) {
+        span {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    p {
+      font-size: 3rem;
+      line-height: 1.3;
+      margin-bottom: 2rem;
+
+      @media only screen and (max-width: 1250px) {
+        width: 80%;
+        margin: 3rem auto;
+        text-align: center;
+      }
+      @media only screen and (max-width: 600px) {
+        font-size: 2rem;
+      }
+      @media only screen and (max-width: 400px) {
+        font-size: 1.6rem;
+      }
+    }
+
+    .click-here {
+      font-size: 2rem;
+
+      @media only screen and (max-width: 1250px) {
+        display: flex;
+        justify-content: center;
+
+        a {
+          margin-left: 0.5rem;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        font-size: 1.6rem;
+      }
+      @media only screen and (max-width: 400px) {
+        font-size: 1.4rem;
+      }
+
+      a,
+      a:visited,
+      a:link {
+        text-decoration: underline;
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+      }
+    }
+  }
+
+  &__container {
+    border: 3px solid $primary-blue;
+    border-radius: 10px;
+    padding-top: 4rem;
+    width: 60rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 0px 7px #f3f3f3;
+    margin-bottom: 10rem;
+
+    &--title {
+      grid-column: 1 / -1;
+      font-size: 3rem;
+      font-weight: 600;
+      margin: 2rem 0;
+      text-align: center;
+      align-self: center;
+      padding: 0 2rem;
+      line-height: 1.2;
+    }
+
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='number']::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      width: 100%;
+      border-radius: 0px;
+      border-left: none;
+      border-right: none;
+    }
+
+    &--infotext {
+      overflow: hidden;
+      position: relative;
+      align-self: center;
+      line-height: 1.4;
+      font-size: 1.4rem;
+      border-top: 2px solid $primary-blue;
+      border-bottom: 2px solid $primary-blue;
+      border-left: none;
+      border-right: none;
+      background-color: $primary-blue;
+      color: #fff;
+      width: 100%;
+      padding: 1.5rem 4rem;
+      box-shadow: inset 0px 0px 5px rgba($color: #000000, $alpha: 0.3);
+      animation: pomikdol 0.5s forwards ease-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+
+      img {
+        animation: pomikdol 0.5s ease-out;
+        display: block;
+        margin: 0 auto;
+        height: auto;
+      }
+    }
+
+    .info2 {
+      animation: pomikdol2 0.5s forwards ease-out;
+    }
+
+    .infotextsmall {
+      animation: pomikdolsmall 0.5s forwards ease-out;
+    }
+
+    &--showgif {
+      animation: pomikdolgif 0.5s forwards ease-out;
+      background-color: transparent;
+
+      img {
+        animation: pomikdolgif 0.5s forwards ease-out;
+      }
+    }
+
+    &--logoanimate {
+      animation: pomikdolgif 0.5s forwards ease-out;
+      img {
+        animation: pomikdolgif 0.5s forwards ease-out;
+        height: 100%;
+      }
+    }
+
+    &--numbdiv {
+      margin: 1.5rem 0;
+
+      input {
+        width: 5rem;
+        outline: none;
+        border: 2px solid $primary-blue;
+        height: 2.5rem;
+        padding-left: 0.5rem;
+      }
+
+      @media only screen and (max-width: 500px) {
+        width: 23rem;
+      }
+    }
+
+    &--select {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 25rem);
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 3rem 3rem 3rem;
+
+      &-title {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 4rem;
+      }
+
+      label {
+        align-self: center;
+        width: 100%;
+      }
+      label:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+
+    &--btn {
+      display: flex;
+      //margin: 4rem 4rem 0 4rem;
+      padding: 3rem 4rem;
+      margin-top: 5rem;
+      background-color: $primary-blue;
+      justify-content: space-between;
+
+      button {
+        width: 15rem;
+        height: 4rem;
+        background-color: white;
+        color: $primary-blue;
+        outline: none;
+        cursor: pointer;
+        border-radius: 10px;
+        font-weight: 600;
+        border: none;
+        transition: all 0.3s;
+
+        &:hover {
+          box-shadow: 0px 0px 10px #fff;
+          transform: scale(1.05);
+        }
+      }
+
+      .btnRight {
+        margin-left: auto;
+      }
+
+      @media only screen and (max-width: 450px) {
+        padding: 3rem 2rem;
+        button {
+          width: 11.5rem;
+        }
+      }
+    }
+
+    &--dizajn,
+    &--logo,
+    &--seo,
+    &--marketing,
+    &--spletnastran {
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: flex-start;
+      position: relative;
+      padding: 2rem 5rem 3rem 5rem;
+
+      label:not(:first-child) {
+        margin-top: 3rem;
+      }
+
+      @media only screen and (max-width: 500px) {
+        align-items: center;
+        padding: 2rem 0 3rem 0;
+
+        label {
+          width: 23rem;
+        }
+      }
+    }
+
+    &--infocena {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .vec {
+        width: 80%;
+        margin-top: 3.5rem;
+
+        @media only screen and (max-width: 600px) {
+          font-size: 1.6rem;
+        }
+
+        span {
+          cursor: pointer;
+          color: $primary-blue;
+          font-weight: bold;
+          text-decoration: underline;
+        }
+      }
+
+      .prvacena {
+        font-size: 3rem;
+        color: white;
+        background-color: $primary-blue;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+
+        span {
+          font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+          font-size: 2rem;
+        }
+      }
+
+      .popust {
+        font-size: 3rem;
+        color: $primary-red;
+        // background-color: $primary-red;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        margin: 1.5rem 0;
+        font-weight: bold;
+        border: 3px solid $primary-red;
+
+        span {
+          font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+          font-size: 2rem;
+        }
+
+        &__samo {
+          font-weight: 300;
+          font-size: 1.4rem;
+          display: block;
+
+          @media only screen and (max-width: 600px) {
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .zadnjacena {
+        font-size: 3.8rem;
+        border-bottom: 5px solid $primary-blue;
+
+        span {
+          font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &--dizajn {
+      &-X {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: #d30000;
+        cursor: pointer;
+        text-transform: uppercase;
+        padding: 0.2rem 0.5rem;
+        z-index: 2;
+      }
+    }
+
+    &__pokaziprimer {
+      position: absolute;
+      margin-left: 10rem;
+      width: 10rem;
+      color: $primary-blue;
+      font-weight: 600;
+      font-size: 1.4rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    div {
+      display: flex;
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      display: none;
+    }
+
+    span {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 0;
+      left: 0;
+      border: 1px solid $primary-blue;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    input[type='checkbox']:checked + span::after,
+    input[type='radio']:checked + span::after {
+      content: '';
+      position: absolute;
+      width: 7px;
+      height: 15px;
+      border: solid $primary-blue;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 3px;
+      left: 8px;
+      cursor: pointer;
+    }
+
+    #cenanumb {
+      display: block;
+      opacity: 1;
+      position: relative;
+      cursor: auto;
+      width: 5rem;
+      height: 2.5rem;
+      margin-left: 1rem;
+      outline: none;
+      border: 2px solid $primary-blue;
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+.twolabelsinsidelabel {
+  align-items: center;
+  margin-top: 1rem;
+
+  label {
+    width: 20rem;
+    height: 100%;
+    margin-top: 0 !important;
+
+    @media only screen and (max-width: 500px) {
+      width: 11rem;
+    }
+  }
+}
+
+.vlozekvoglasevanje {
+  display: flex;
+  align-items: center;
+  margin-bottom: -0.5rem;
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  em {
+    font-style: normal;
+  }
+}
+
+.posljipovprasevanje {
+  margin-top: 2rem;
+  margin-bottom: -1.5rem;
+  height: 4rem;
+
+  input {
+    border: 1px solid $primary-blue;
+    outline: none;
+    height: 100%;
+    padding-left: 0.5rem;
+    width: 22rem;
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 1.4rem;
+  }
+
+  button {
+    outline: none;
+    height: 100%;
+    background: $linear-blue;
+    border: 1px solid $primary-blue;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    width: 15rem;
+  }
+
+  .popravi {
+    cursor: pointer;
+    color: $primary-blue;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+  @media only screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    height: 9rem;
+
+    button {
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+}
+
+label[for='trgovina'],
+label[for='aplikacija'],
+label[for='dizajn'],
+label[for='seo'],
+label[for='stran'] {
+  span {
+    border: none;
+    cursor: default;
+
+    &::after {
+      cursor: default !important;
+    }
+  }
+}
+
+label[for='trgovina'],
+label[for='aplikacija'] {
+  &::before {
+    content: 'x';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 0;
+    bottom: 3.5px;
+    border: 1px solid transparent;
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: 400;
+    color: $primary-blue;
+  }
+}
+
+@keyframes pomikdol {
+  from {
+    height: 0;
+  }
+  to {
+    height: 15rem;
+  }
+}
+
+@keyframes pomikdol2 {
+  from {
+    height: 0;
+  }
+  to {
+    height: 22rem;
+  }
+}
+
+@keyframes pomikdolgif {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 25rem;
+  }
+}
+
+@keyframes pomikdolsmall {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 10rem;
+  }
+}

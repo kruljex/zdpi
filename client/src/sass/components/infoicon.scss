@@ -1,0 +1,45 @@
+@import '../variables.scss';
+
+.infoicon {
+  position: absolute;
+  margin-left: 7.5rem;
+
+  svg {
+    height: 2.5rem;
+    background-color: #fff;
+    fill: $primary-blue;
+    cursor: pointer;
+    display: flex;
+  }
+}
+
+.infoicon2 {
+  margin-left: 13rem;
+}
+
+.infoicon3 {
+  margin-left: 15rem;
+}
+
+.infoicon4 {
+  margin-left: 10rem;
+}
+
+.infoicon5 {
+  margin-left: 18.5rem;
+}
+
+.infoicon6 {
+  margin-left: 29rem;
+}
+
+.infoicon7 {
+  margin-left: 9.5rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .infoiconmobile500 {
+    margin-top: 1rem;
+    margin-left: 18.5rem;
+  }
+}

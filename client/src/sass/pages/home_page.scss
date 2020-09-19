@@ -1,0 +1,315 @@
+@import '../variables.scss';
+
+.home_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: $navbar-height;
+  background-color: $bright-gray;
+
+  @media only screen and (max-width: 900px) {
+    padding-top: $navbar-height-mobile;
+  }
+
+  &__title {
+    background: linear-gradient(
+        to left,
+        rgba($primary-blue, 0.5),
+        rgba($primary-blue, 0.5)
+      ),
+      url('/images/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      color: white;
+      font-size: 6rem;
+      font-weight: 700;
+      line-height: 1.1;
+      width: 75%;
+      z-index: 5;
+      margin: 0 0 0 8rem;
+      letter-spacing: 1px;
+
+      @media only screen and (max-width: 1100px) {
+        font-size: 5rem;
+      }
+
+      @media only screen and (max-width: 750px) {
+        font-size: 4rem;
+        margin-left: 4rem;
+      }
+
+      @media only screen and (max-width: 500px) {
+        font-size: 3rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__PVV {
+    div {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+      text-align: center;
+      p {
+        width: 75%;
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: 2rem;
+        font-size: 1.8rem;
+
+        @media only screen and (max-width: 600px) {
+          width: 85%;
+        }
+      }
+    }
+    &--1,
+    &--3 {
+      background-color: $bright-gray;
+    }
+    &--2 {
+      background: $linear-blue;
+      color: #fff;
+    }
+    &--3 {
+      display: flex;
+      flex-direction: column;
+    }
+    &--h2 {
+      @include title-h2;
+      @media only screen and (max-width: 500px) {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  &__V--h2 {
+    //VREDNOTE
+    @include title-h2;
+    @media only screen and (max-width: 500px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__V--container {
+    margin: -1.5rem auto;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    grid-template-columns: minmax(min-content, 45rem) minmax(30rem, 50rem) minmax(
+        min-content,
+        45rem
+      );
+
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: minmax(min-content, 60rem);
+      grid-template-rows: repeat(3, min-content);
+      row-gap: 3rem;
+    }
+    @media only screen and (max-width: 450px) {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+
+    div {
+      padding: 5rem 0;
+      border: 3px solid $primary-blue;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      height: 100%;
+      width: 100%;
+
+      &:first-child,
+      &:last-child {
+        background: $linear-blue;
+        color: $bright-gray;
+      }
+
+      &:first-child {
+        clip-path: polygon(30% 0, 100% 0, 100% 100%, 30% 100%, 0 80%, 0 20%);
+        text-align: right;
+        grid-column: 1/ 2;
+        @media only screen and (max-width: 1000px) {
+          clip-path: polygon(50% 0, 100% 20%, 100% 100%, 0 100%, 0 20%);
+          text-align: center;
+          padding-top: 7rem;
+        }
+        @media only screen and (max-width: 400px) {
+          clip-path: polygon(50% 0, 100% 20%, 100% 100%, 0 100%, 0 20%);
+          text-align: center;
+          padding-top: 10rem;
+        }
+        span {
+          padding-right: 5rem;
+          align-self: flex-end;
+          @media only screen and (max-width: 1000px) {
+            align-self: center;
+            padding-right: 0;
+          }
+        }
+      }
+
+      &:last-child {
+        clip-path: polygon(0 0, 70% 0, 100% 20%, 100% 80%, 70% 100%, 0 100%);
+        text-align: left;
+        @media only screen and (max-width: 1000px) {
+          clip-path: polygon(50% 100%, 100% 80%, 100% 0, 0 0, 0 80%);
+          text-align: center;
+          padding-bottom: 7rem;
+        }
+        span {
+          padding-left: 5rem;
+          align-self: flex-start;
+          @media only screen and (max-width: 1000px) {
+            align-self: center;
+            padding-left: 0;
+          }
+        }
+      }
+      span {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+      p {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &__services {
+    display: grid;
+    grid-template-columns: 1fr 100% 1fr;
+    justify-content: center;
+    align-items: center;
+    background: $linear-blue;
+    padding: 5rem 5rem;
+
+    @media only screen and (max-width: 400px) {
+      padding: 5rem 3rem;
+    }
+
+    &--title {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+      align-self: center;
+      justify-self: center;
+      text-align: center;
+      @include title-h2;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      @media only screen and (max-width: 500px) {
+        font-size: 3rem;
+      }
+    }
+
+    &--content {
+      grid-column: 2 / 3;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      margin-top: 12rem;
+      svg {
+        fill: green;
+        width: 20rem;
+      }
+
+      a {
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          color: #fff;
+          cursor: pointer;
+          position: relative;
+          text-align: center;
+          margin-bottom: 18rem;
+
+          @media only screen and (max-width: 400px) {
+            margin-bottom: 16rem;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            width: 23rem;
+            height: 23rem;
+            border: 3px solid $bright-gray;
+            border-radius: 50%;
+            transition: all 0.3s;
+
+            @media only screen and (max-width: 400px) {
+              width: 22rem;
+              height: 22rem;
+            }
+          }
+
+          &:hover::before {
+            background-color: $bright-gray;
+            z-index: 1;
+            box-shadow: 0px 0px 10px $bright-gray;
+            transform: scale(1.05);
+          }
+
+          &:hover svg {
+            fill: $primary-blue;
+          }
+
+          &:hover span {
+            color: $primary-blue;
+          }
+
+          svg {
+            height: 10rem;
+            fill: white;
+            z-index: 2;
+            transition: all 0.3s;
+
+            @media only screen and (max-width: 400px) {
+              height: 9rem;
+            }
+          }
+
+          span {
+            line-height: 1.1;
+            z-index: 2;
+            margin-top: 1.2rem;
+            font-weight: 500;
+            font-size: 1.9rem;
+            transition: all 0.3s;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
